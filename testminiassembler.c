@@ -14,9 +14,24 @@
 
 int main(void)
 {
+
    int i1;
    int i2;
    int i3;
+   /* 0000....1000 */
+   unsigned int testInt = 16;
+
+   /* 0000....1111 */
+   unsigned int setter = 31;
+
+   /* 0000....0110 */
+   unsigned int srcStart = 1;
+
+   /* 0000....0|11|0 */
+   /* 0000....1|00|0 */
+   unsigned int destStart = 1;
+
+   unsigned int bitNum = 2;
 
    unsigned int auiRegisters[] = {0, 1, 15, 29, 30};
    unsigned long aulAddresses[] = {0x00000000UL, 0x00000001UL,
@@ -32,6 +47,9 @@ int main(void)
    int iInstrAddrCount =
       (int)(sizeof(aulInstrAddr)/sizeof(unsigned long));
    int iImmedCount = (int)(sizeof(aiImmeds)/sizeof(int));
+
+   /* 0000....1|11|0 */
+   setField(setter, srcStart, &testInt, destStart, bitNum);
 
    /* Test MiniAssembler_mov. */
    /* the negative values in the aiImmeds array are to                */

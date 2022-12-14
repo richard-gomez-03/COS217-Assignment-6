@@ -109,25 +109,3 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
 
    return uiInstr;
 }
-
-int main(void) {
-   /* 0000....1000 */
-   unsigned int testInt = 16;
-
-   /* 0000....1111 */
-   unsigned int setter = 31;
-
-   /* 0000....0110 */
-   unsigned int srcStart = 1;
-
-   /* 0000....0|11|0 */
-   /* 0000....1|00|0 */
-   unsigned int destStart = 1;
-
-   unsigned int bitNum = 2;
-
-   /* 0000....1|11|0 */
-   setField(setter, srcStart, &testInt, destStart, bitNum);
-
-   return 0;
-}

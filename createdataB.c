@@ -12,8 +12,9 @@ int main(void) {
     FILE *psFile;
     psFile = fopen("dataB", "w");
 
-    fprintf(psFile, "Richard Gomez00000000000000000000000000000000000");
+    fprintf(psFile, "Richard Gomez");
     putc('\0', psFile);
+    fprintf(psFile, "00000000000000000000000000000000000");
     /* for(i = 0; i < 49; i++) {
         putc('\0', psFile);
     } */

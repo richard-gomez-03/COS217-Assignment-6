@@ -14,7 +14,7 @@ int main(void) {
 
     fprintf(psFile, "Richard Gomez");
     putc('\0', psFile);
-    fprintf(psFile, "00000000000000000000000000000000000");
+    fprintf(psFile, "0000000000000000000000000000000000");
     /* for(i = 0; i < 49; i++) {
         putc('\0', psFile);
     } */

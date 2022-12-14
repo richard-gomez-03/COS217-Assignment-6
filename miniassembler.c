@@ -101,10 +101,14 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
 {
    /* Your code here */
    unsigned int uiInstr;
-   unsigned int uiDisp;
+   unsigned long uiDisp;
 
    /* Base Instruction Code */
    uiInstr = 0x14000000;
+
+   uiDisp = (unsigned int)(ulAddr - ulAddrOfThisInstr);
+
+   setField(uiDisp, 0, &uiInstr, 0, 25);
 
    return uiInstr;
 }

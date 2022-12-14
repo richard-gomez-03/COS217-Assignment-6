@@ -36,24 +36,6 @@ static void setField(unsigned int uiSrc, unsigned int uiSrcStartBit,
    uiSrc>>=finalShift;
    
    *puiDest |= uiSrc;
-
-   /* 0000....1000 */
-   /* unsigned int testInt = 16; */
-
-   /* 0000....1111 */
-   /* unsigned int setter = 31; */
-
-   /* 0000....0110 */
-   /* unsigned int srcStart = 1; */
-
-   /* 0000....0|11|0 */
-   /* 0000....1|00|0 */
-   /* unsigned int destStart = 1; */
-
-   /* unsigned int bitNum = 2; */
-
-   /* 0000....1|11|0 */
-   /* setField(setter, srcStart, &testInt, destStart, bitNum); */
 }
 
 /*--------------------------------------------------------------------*/
@@ -102,13 +84,12 @@ unsigned int MiniAssembler_strb(unsigned int uiFromReg,
 {
    /* Your code here */
    unsigned int uiInstr;
-   unsigned int uiDisp;
 
    uiInstr = 0x39000000;
 
    /* destination */
    setField(uiFromReg, 0, &uiInstr, 0, 5);
-   setField(uiFromReg, 0, &uiInstr, 6, 5);
+   setField(uiFromReg, 0, &uiInstr, 5, 5);
 
    return uiInstr;
 }
@@ -123,7 +104,7 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
    unsigned int uiDisp;
 
    /* Base Instruction Code */
-   uiInstr = 0x10000000;
+   uiInstr = 0x14000000;
 
    return uiInstr;
 }

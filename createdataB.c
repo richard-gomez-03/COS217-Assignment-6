@@ -11,10 +11,10 @@ int main(void) {
     int i;
     FILE *psFile;
     psFile = fopen("dataB", "w");
-    
+
     fprintf(psFile, "Richard Gomez");
     putc('\0', psFile);
-    for(i = 0; i < 50; i++) {
+    for(i = 0; i < 16; i++) {
         putc('\0', psFile);
     }
     bAddress = 0x400858;

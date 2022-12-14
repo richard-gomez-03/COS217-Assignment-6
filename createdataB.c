@@ -14,7 +14,7 @@ int main(void) {
 
     fprintf(psFile, "Richard Gomez");
     putc('\0', psFile);
-    for(i = 0; i < 16; i++) {
+    for(i = 0; i < 50; i++) {
         putc('\0', psFile);
     }
     bAddress = 0x400858;

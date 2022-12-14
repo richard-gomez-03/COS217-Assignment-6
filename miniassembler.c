@@ -67,7 +67,7 @@ unsigned int MiniAssembler_mov(unsigned int uiReg, int iImmed)
 
    setField(uiReg, 0, &uiInstr, 0, 5);
 
-   setField(iImmed, 0, &uiInstr, 5, 15);
+   setField(iImmed, 0, &uiInstr, 5, 16);
 
    return uiInstr;
 }
@@ -108,7 +108,7 @@ unsigned int MiniAssembler_strb(unsigned int uiFromReg,
 
    /* destination */
    setField(uiFromReg, 0, &uiInstr, 0, 5);
-   setField(uiFromReg, 0, &uiInstr, 5, 5);
+   setField(uiFromReg, 0, &uiInstr, 6, 5);
 
    return uiInstr;
 }

@@ -89,7 +89,7 @@ unsigned int MiniAssembler_strb(unsigned int uiFromReg,
 
    /* destination */
    setField(uiFromReg, 0, &uiInstr, 0, 5);
-   setField(uiFromReg, 0, &uiInstr, 5, 5);
+   setField(uiToReg, 0, &uiInstr, 5, 5);
 
    return uiInstr;
 }

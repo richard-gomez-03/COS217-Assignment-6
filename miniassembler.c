@@ -19,21 +19,21 @@ static void setField(unsigned int uiSrc, unsigned int uiSrcStartBit,
                      unsigned int *puiDest, unsigned int uiDestStartBit,
                      unsigned int uiNumBits)
 {
-   unsigned int bitsTraversed;
    unsigned int leftShift;
    unsigned int finalShift;
    unsigned int i;
 
    /* truncating end of uiSrc */
-   uiSrc>>uiSrcStartBit;
+   uiSrc>>=uiSrcStartBit;
 
    leftShift = 32 - uiNumBits;
 
    /* truncating start of uiSrc */
-   uiSrc<<leftShift;
+   uiSrc<<=leftShift;
 
    /* shift back startpoint for dest */
-   uiSrc>>(32 - (uiNumBits + uiDestStartBit));
+   finalShift = (32 - (uiNumBits + uiDestStartBit));
+   uiSrc>>=finalShift;
    
    *puiDest |= uiSrc;
 }
@@ -51,6 +51,7 @@ unsigned int MiniAssembler_mov(unsigned int uiReg, int iImmed)
 
    setField(iImmed, 0, &uiInstr, 5, 15);
 
+   return uiInstr;
 }
 
 /*--------------------------------------------------------------------*/
@@ -91,6 +92,7 @@ unsigned int MiniAssembler_strb(unsigned int uiFromReg,
    setField(uiFromReg, 0, &uiInstr, 0, 5);
    setField(uiFromReg, 0, &uiInstr, 5, 5);
 
+   return uiInstr;
 }
 
 /*--------------------------------------------------------------------*/
@@ -104,6 +106,8 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
 
    /* Base Instruction Code */
    uiInstr = 0x10000000;
+
+   return uiInstr;
 }
 
 int main(void) {
@@ -124,4 +128,6 @@ int main(void) {
 
    /* 0000....1|11|0 */
    setField(setter, srcStart, &testInt, destStart, bitNum);
+
+   return 0;
 }

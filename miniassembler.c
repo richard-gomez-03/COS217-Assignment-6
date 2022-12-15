@@ -21,7 +21,6 @@ static void setField(unsigned int uiSrc, unsigned int uiSrcStartBit,
 {
    unsigned int leftShift;
    unsigned int finalShift;
-   unsigned int i;
 
    /* truncating end of uiSrc */
    uiSrc>>=uiSrcStartBit;

@@ -21,13 +21,13 @@ int main(void) {
     fprintf(psFile, "Richard Gomez");
     putc('\0', psFile);
 
-    movInstruction = MiniAssembler_mov(0, 'A');
-    fwrite(&movInstruction, sizeof(unsigned int), 1, psFile);
-    
-    adrInstruction = MiniAssembler_adr(1, 0x420044, 0x42006a);
+    adrInstruction = MiniAssembler_adr(0, 0x420044, 0x420066);
     fwrite(&adrInstruction, sizeof(unsigned int), 1, psFile);
 
-    strbInstruction = MiniAssembler_strb(0, 1);
+    movInstruction = MiniAssembler_mov(1, 'A');
+    fwrite(&movInstruction, sizeof(unsigned int), 1, psFile);
+    
+    strbInstruction = MiniAssembler_strb(1, 0);
     fwrite(&strbInstruction, sizeof(unsigned int), 1, psFile);
     
     bInstruction = MiniAssembler_b(0x400864, 0x420072);

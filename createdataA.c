@@ -33,7 +33,7 @@ int main(void) {
     bInstruction = MiniAssembler_b(0x400874, 0x420072);
     fwrite(&bInstruction, sizeof(unsigned int), 1, psFile);
 
-    for(i = 0; i < 24; i++) {
+    for(i = 0; i < 25; i++) {
         putc('\0', psFile);
     }
 

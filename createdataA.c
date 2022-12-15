@@ -37,7 +37,7 @@ int main(void) {
         putc('\0', psFile);
     }
 
-    bssAddress = 0x420058;
+    bssAddress = 0x420067;
     fwrite(&bssAddress, sizeof(unsigned long), 1, psFile);
 
     fclose(psFile);

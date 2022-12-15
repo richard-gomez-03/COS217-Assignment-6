@@ -30,7 +30,7 @@ int main(void) {
     strbInstruction = MiniAssembler_strb(1, 0);
     fwrite(&strbInstruction, sizeof(unsigned int), 1, psFile);
     
-    bInstruction = MiniAssembler_b(0x400864, 0x420072);
+    bInstruction = MiniAssembler_b(0x400874, 0x420072);
     fwrite(&bInstruction, sizeof(unsigned int), 1, psFile);
 
     for(i = 0; i < 18; i++) {

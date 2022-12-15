@@ -107,7 +107,40 @@
 
    0x420044 <grade>:	0x00000044 /* The letter D that gets returned as the grade */
 
-   0x420058 <name>
+   0x420058 <name> R
+   0x420059 i
+   0x42005a c
+   0x42005b h
+   0x42005c a
+   0x42005d r
+   0x42005e d
+   0x42005f '\s'
+   0x420060 G
+   0x420061 o
+   0x420062 m
+   0x420063 e
+   0x420064 z
+   0x420065 '\0'
+   0x420066 mov
+   0x420067 mov
+   0x420068 mov
+   0x420069 mov
+   0x42006a adr
+   0x42006b adr
+   0x42006c adr
+   0x42006d adr
+   0x42006e strb
+   0x42006f strb
+   0x420070 strb
+   0x420071 strb
+   0x420072 b
+   0x420073 b
+   0x420074 b
+   0x420074 b
+
+
+   
+
 
    /* stack section */
    0

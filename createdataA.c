@@ -24,13 +24,13 @@ int main(void) {
     movInstruction = MiniAssembler_mov(0, 'A');
     fwrite(&movInstruction, sizeof(unsigned int), 1, psFile);
     
-    adrInstruction = MiniAssembler_adr(1, 0x420044, 0x40086c);
+    adrInstruction = MiniAssembler_adr(1, 0x420044, 0x42006a);
     fwrite(&adrInstruction, sizeof(unsigned int), 1, psFile);
 
     strbInstruction = MiniAssembler_strb(0, 1);
     fwrite(&strbInstruction, sizeof(unsigned int), 1, psFile);
     
-    bInstruction = MiniAssembler_b(0x400874, 0x420072);
+    bInstruction = MiniAssembler_b(0x40085c, 0x420072);
     fwrite(&bInstruction, sizeof(unsigned int), 1, psFile);
 
     for(i = 0; i < 18; i++) {

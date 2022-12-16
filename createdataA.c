@@ -7,10 +7,10 @@
 #include <stdlib.h>
 #include "miniassembler.h"
 
-/* The main function takes no arguments and writes a series of
-   characters that cause a buffer overun of the grader program. These
-   characters cause an incorrect output to be printed. The characters
-   are printed to a file named dataA. Returns 0 */
+/* main takes no arguments and writes a series of characters that cause
+   a buffer overun of the grader program. These characters cause an 
+   incorrect output, specifically to give a grade of 'A', to be printed.
+   The characters are printed to a file named dataA. Returns 0 */
 
 int main(void) {
     unsigned long bssAddress;

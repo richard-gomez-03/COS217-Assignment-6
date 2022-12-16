@@ -43,6 +43,7 @@
    0x4007f4 <readString+116>:	add	sp, sp, #0x50
    0x4007f8 <readString+120>:	ret
    
+
    /* Prolog */
    0x4007fc <getName>:	sub	sp, sp, #0x10
    0x400800 <getName+4>:	str	x30, [sp]
@@ -59,6 +60,7 @@
    0x400814 <getName+24>:	ldr	x30, [sp]
    0x400818 <getName+28>:	add	sp, sp, #0x10
    0x40081c <getName+32>:	ret
+
 
    /* Prolog */
    0x400820 <main>:	sub	sp, sp, #0x10
@@ -107,10 +109,13 @@
    0x400894 <main+116>:	add	sp, sp, #0x10
    0x400898 <main+120>:	ret
 
+   /* Data Section */
    /* The letter D that gets returned as the grade */
    0x420044 <grade>:	0x00000044 
 
+
    /* BSS Section */
+   /* Where the name variable is stored */
    0x420058 <name>
 
    /* BSS Section during A attack */
@@ -148,13 +153,17 @@
    0x420077 b printf
 
    /* stack section */
-   0
-   8
-   16
-   24
-   32
-   40
-   48 x30
+   0 x19
+   8 x20
+   16 x21
+   24 x30 /* in readString */
+   32 buf
+   40 buf
+   48 buf
+   56 buf
+   64 buf
+   72 buf
+   80 x30 /* in getName */
 
 
 

